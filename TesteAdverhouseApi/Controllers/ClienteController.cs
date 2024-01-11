@@ -43,12 +43,12 @@ namespace TesteAdverhouseApi.Controllers
         }
 
         [HttpPost(Name = "InsertCliente")]
-        public async Task Post(ClienteModel buyerModel)
+        public async Task Post(ClienteModel clienteModel)
         {
             try
             {
                 ClienteRepository dal = new ClienteRepository();
-                await dal.InsertAsync(buyerModel);
+                await dal.InsertAsync(clienteModel);
             }
             catch (Exception ex)
             {

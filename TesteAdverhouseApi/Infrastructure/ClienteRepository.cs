@@ -46,7 +46,7 @@ namespace TesteAdverhouseApi.Infrastructure
         {
             List<ClienteModel> listClienteModel = new List<ClienteModel>();
             using (SqlConnection con = new SqlConnection(connectionString))
-            using (SqlCommand cmd = new SqlCommand("USP_BuyerGetAll", con))
+            using (SqlCommand cmd = new SqlCommand("USP_Client_Adverhouse_GetAll", con))
                 try
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -150,7 +150,7 @@ namespace TesteAdverhouseApi.Infrastructure
         public async Task InsertAsync(ClienteModel ClienteModel)
         {
             SqlConnection con = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand("USP_BuyerInsert", con);
+            SqlCommand cmd = new SqlCommand("USP_Client_Adverhouse_Insert", con);
             cmd.Parameters.AddWithValue("@NomeCliente", ClienteModel.NomeCliente);
             cmd.Parameters.AddWithValue("@RazaoSocial", ClienteModel.RazaoSocial);
             cmd.Parameters.AddWithValue("@Cnpj", ClienteModel.Cnpj);
@@ -187,7 +187,7 @@ namespace TesteAdverhouseApi.Infrastructure
         public void Update(ClienteModel ClienteModel)
         {
             SqlConnection con = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand("USP_BuyerUpdate", con);
+            SqlCommand cmd = new SqlCommand("USP_Client_Adverhouse_Update", con);
             cmd.Parameters.AddWithValue("@Id", ClienteModel.Id);
             cmd.Parameters.AddWithValue("@NomeCliente", ClienteModel.NomeCliente);
             cmd.Parameters.AddWithValue("@RazaoSocial", ClienteModel.RazaoSocial);
@@ -203,7 +203,7 @@ namespace TesteAdverhouseApi.Infrastructure
         public async Task UpdateAsync(ClienteModel ClienteModel)
         {
             SqlConnection con = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand("USP_BuyerUpdate", con);
+            SqlCommand cmd = new SqlCommand("USP_Client_Adverhouse_Update", con);
             cmd.Parameters.AddWithValue("@Id", ClienteModel.Id);
             cmd.Parameters.AddWithValue("@NomeCliente", ClienteModel.NomeCliente);
             cmd.Parameters.AddWithValue("@RazaoSocial", ClienteModel.RazaoSocial);
